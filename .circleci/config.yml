@@ -1,0 +1,34 @@
+version: 2.1
+
+jobs:
+  test:
+    docker:
+      - image: cimg/go:1.20.5
+        environment:
+          ENVIRONMENT: test
+    working_directory: ~/golib
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - deps-v1-{{ checksum ".go-version" }}-{{ checksum "go.sum" }}
+            - deps-v1-{{ checksum ".go-version" }}-
+      - run:
+          name: Install dependencies
+          command: make install
+      - save_cache:
+          key: deps-v1-{{ checksum ".go-version" }}-{{ checksum "go.sum" }}
+          paths:
+            - ~/.cache/go-build
+            - ~/go/pkg/mod
+      - run:
+          name: Run linter
+          command: make lint
+      - run:
+          name: Run tests
+          command: make test
+      - run:
+          name: Enforce coverage
+          command: make enforce
+      - store_artifacts:
+          path: coverage.out
