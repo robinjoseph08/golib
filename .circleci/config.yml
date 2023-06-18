@@ -32,3 +32,8 @@ jobs:
           command: make enforce
       - store_artifacts:
           path: coverage.out
+
+workflows:
+  test:
+    jobs:
+      - test
