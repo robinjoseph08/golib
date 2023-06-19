@@ -6,7 +6,6 @@ import (
 	"os"
 	"runtime"
 
-	"github.com/davecgh/go-spew/spew"
 	"github.com/pkg/errors"
 	"github.com/robinjoseph08/golib/errutils"
 	"github.com/robinjoseph08/golib/logger/writer"
@@ -141,7 +140,6 @@ func (log Logger) log(evt *zerolog.Event, message string, fields ...Data) {
 	for _, field := range append(log.data, fields...) {
 		if len(field) != 0 {
 			hasData = true
-			spew.Dump(field)
 			data = data.Fields(map[string]interface{}(field))
 		}
 	}
@@ -158,7 +156,6 @@ func (log Logger) log(evt *zerolog.Event, message string, fields ...Data) {
 	}
 	// Add data field
 	if hasData {
-		fmt.Println("adding data")
 		evt = evt.Dict("data", data)
 	}
 
