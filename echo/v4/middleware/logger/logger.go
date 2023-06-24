@@ -1,6 +1,7 @@
 package logger
 
 import (
+	"fmt"
 	"time"
 
 	"github.com/google/uuid"
@@ -61,7 +62,7 @@ func Middleware() func(echo.HandlerFunc) echo.HandlerFunc {
 
 			log.Root(logger.Data{
 				"status_code": c.Response().Status,
-				"duration":    t2.Sub(t1).Seconds() * 1000,
+				"duration":    fmt.Sprintf("%.5f", t2.Sub(t1).Seconds()*1000),
 				"referer":     c.Request().Referer(),
 				"user_agent":  c.Request().UserAgent(),
 			}).Info("request handled")
