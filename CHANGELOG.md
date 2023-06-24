@@ -1,4 +1,8 @@
 
+<a name="v0.1.1"></a>
+## [v0.1.1](https://github.com/robinjoseph08/golib/compare/v0.1.0...v0.1.1) (2023-06-24)
+
+
 <a name="v0.1.0"></a>
 ## v0.1.0 (2023-06-19)
 
