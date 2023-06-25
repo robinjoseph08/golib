@@ -11,7 +11,7 @@ import (
 )
 
 const (
-	levelHeader   = "log-level"
+	levelHeader   = "x-log-level"
 	versionHeader = "x-version"
 	echoIDKey     = "id"
 )
@@ -59,6 +59,10 @@ func Middleware() func(echo.HandlerFunc) echo.HandlerFunc {
 				c.Error(err)
 			}
 			t2 := time.Now()
+
+			// We reload the logger before we emit the log line so that we pick up any changes/additional
+			// fields that might've been added in a downstream middleware.
+			log = logger.FromContext(c.Request().Context())
 
 			log.Root(logger.Data{
 				"status_code": c.Response().Status,
