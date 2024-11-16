@@ -8,6 +8,13 @@ func String(s string) *string {
 	return &s
 }
 
+func EmptyString(s string) *string {
+	if s == "" {
+		return nil
+	}
+	return &s
+}
+
 func Int(i int) *int {
 	return &i
 }
