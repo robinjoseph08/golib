@@ -21,6 +21,20 @@ func TestString(t *testing.T) {
 	t.Run("returns a pointer from a const", func(tt *testing.T) {
 		assert.Equal(tt, "foo", *String(s))
 	})
+
+	t.Run("returns a pointer to the empty string", func(tt *testing.T) {
+		assert.Equal(tt, "", *String(""))
+	})
+}
+
+func TestEmptyString(t *testing.T) {
+	t.Run("returns a pointer from a string", func(tt *testing.T) {
+		assert.Equal(tt, "foo", *EmptyString("foo"))
+	})
+
+	t.Run("returns nil for the empty string", func(tt *testing.T) {
+		assert.Nil(tt, EmptyString(""))
+	})
 }
 
 func TestInt(t *testing.T) {
