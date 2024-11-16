@@ -1,4 +1,12 @@
 
+<a name="v0.3.0"></a>
+## [v0.3.0](https://github.com/robinjoseph08/golib/compare/v0.2.1...v0.3.0) (2024-11-16)
+
+### Features
+
+* **pointerutil:** add EmptyString ([#8](https://github.com/robinjoseph08/golib/issues/8))
+
+
 <a name="v0.2.1"></a>
 ## [v0.2.1](https://github.com/robinjoseph08/golib/compare/v0.2.0...v0.2.1) (2023-06-25)
 
