@@ -1,4 +1,12 @@
 
+<a name="v0.4.0"></a>
+## [v0.4.0](https://github.com/robinjoseph08/golib/compare/v0.3.0...v0.4.0) (2025-12-31)
+
+### Features
+
+* **pointerutil:** add Float64 ([#9](https://github.com/robinjoseph08/golib/issues/9))
+
+
 <a name="v0.3.0"></a>
 ## [v0.3.0](https://github.com/robinjoseph08/golib/compare/v0.2.1...v0.3.0) (2024-11-16)
 
