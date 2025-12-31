@@ -11,6 +11,7 @@ const (
 	s = "foo"
 	i = 1
 	b = true
+	f = 3.14
 )
 
 func TestString(t *testing.T) {
@@ -54,6 +55,16 @@ func TestBool(t *testing.T) {
 
 	t.Run("returns a pointer from a const", func(tt *testing.T) {
 		assert.Equal(tt, true, *Bool(b))
+	})
+}
+
+func TestFloat64(t *testing.T) {
+	t.Run("returns a pointer from a literal", func(tt *testing.T) {
+		assert.Equal(tt, 3.14, *Float64(3.14))
+	})
+
+	t.Run("returns a pointer from a const", func(tt *testing.T) {
+		assert.Equal(tt, 3.14, *Float64(f))
 	})
 }
 

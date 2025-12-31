@@ -23,6 +23,10 @@ func Bool(b bool) *bool {
 	return &b
 }
 
+func Float64(f float64) *float64 {
+	return &f
+}
+
 func Time(t time.Time) *time.Time {
 	return &t
 }
