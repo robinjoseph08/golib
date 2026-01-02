@@ -1,4 +1,12 @@
 
+<a name="v0.5.1"></a>
+## [v0.5.1](https://github.com/robinjoseph08/golib/compare/v0.5.0...v0.5.1) (2026-01-02)
+
+### Bug Fixes
+
+* **logger:** instead of 'pretty', use 'console' ([#11](https://github.com/robinjoseph08/golib/issues/11))
+
+
 <a name="v0.5.0"></a>
 ## [v0.5.0](https://github.com/robinjoseph08/golib/compare/v0.4.0...v0.5.0) (2026-01-02)
 
