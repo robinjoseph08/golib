@@ -41,7 +41,7 @@ func init() {
 	switch os.Getenv("LOG_FORMAT") {
 	case "json":
 		output = os.Stdout
-	case "pretty", "":
+	case "console", "":
 		output = writer.ConsoleWriter{Out: os.Stderr}
 	}
 }
