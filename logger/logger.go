@@ -38,7 +38,12 @@ type stackTracer interface {
 func init() {
 	host, _ = os.Hostname() // nolint: gosec
 	zerolog.TimestampFieldName = "timestamp"
-	output = writer.ConsoleWriter{Out: os.Stderr}
+	switch os.Getenv("LOG_FORMAT") {
+	case "json":
+		output = os.Stdout
+	case "pretty", "":
+		output = writer.ConsoleWriter{Out: os.Stderr}
+	}
 }
 
 // New returns a new configured Logger instance.
