@@ -1,6 +1,6 @@
 # golib
 
-[![Version](https://img.shields.io/badge/version-v0.4.0-green.svg)](https://github.com/robinjoseph08/golib/tags)
+[![Version](https://img.shields.io/badge/version-v0.5.0-green.svg)](https://github.com/robinjoseph08/golib/tags)
 [![GoDoc](https://pkg.go.dev/badge/github.com/robinjoseph08/golib)](https://pkg.go.dev/github.com/robinjoseph08/golib)
 
 This is a Go module of some of the packages that I use in almost every one of my Go projects, so instead of copying them

@@ -1,4 +1,12 @@
 
+<a name="v0.5.0"></a>
+## [v0.5.0](https://github.com/robinjoseph08/golib/compare/v0.4.0...v0.5.0) (2026-01-02)
+
+### Features
+
+* **logger:** support logging in JSON ([#10](https://github.com/robinjoseph08/golib/issues/10))
+
+
 <a name="v0.4.0"></a>
 ## [v0.4.0](https://github.com/robinjoseph08/golib/compare/v0.3.0...v0.4.0) (2025-12-31)
 
