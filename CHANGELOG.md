@@ -1,4 +1,12 @@
 
+<a name="v0.5.2"></a>
+## [v0.5.2](https://github.com/robinjoseph08/golib/compare/v0.5.1...v0.5.2) (2026-04-17)
+
+### Features
+
+* **logger:** add SetOutput and Output functions ([#12](https://github.com/robinjoseph08/golib/issues/12))
+
+
 <a name="v0.5.1"></a>
 ## [v0.5.1](https://github.com/robinjoseph08/golib/compare/v0.5.0...v0.5.1) (2026-01-02)
 
