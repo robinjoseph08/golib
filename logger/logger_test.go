@@ -58,32 +58,20 @@ func TestLogger(t *testing.T) {
 }
 
 func TestSetOutput(t *testing.T) {
-	defer func() {
-		output = os.Stdout
-	}()
+	prev := output
+	defer func() { output = prev }()
 
 	var buf bytes.Buffer
 	SetOutput(&buf)
-	assert.Same(t, &buf, output)
+	assert.Same(t, &buf, Output())
 
 	New().Info("hello")
 	assert.Contains(t, buf.String(), `"message":"hello"`)
 }
 
-func TestOutput(t *testing.T) {
-	defer func() {
-		output = os.Stdout
-	}()
-
-	var buf bytes.Buffer
-	output = &buf
-	assert.Same(t, &buf, Output())
-}
-
 func TestSetOutputMultiWriter(t *testing.T) {
-	defer func() {
-		output = os.Stdout
-	}()
+	prev := output
+	defer func() { output = prev }()
 
 	var a, b bytes.Buffer
 	SetOutput(io.MultiWriter(&a, &b))

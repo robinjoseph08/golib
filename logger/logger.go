@@ -46,13 +46,18 @@ func init() {
 	}
 }
 
-// SetOutput overrides the writer used by all subsequent New/NewWithLevel calls.
-// Call before New() to add additional writers (e.g., io.MultiWriter for a ring buffer).
+// SetOutput replaces the writer used by subsequent New/NewWithLevel calls.
+// Loggers already constructed are unaffected — zerolog captures the writer
+// at construction time. To fan out to multiple sinks, compose with
+// io.MultiWriter(logger.Output(), extra) before calling SetOutput.
+//
+// Not safe for concurrent use. Call during program initialization, before
+// any goroutines construct loggers.
 func SetOutput(w io.Writer) {
 	output = w
 }
 
-// Output returns the current output writer.
+// Output returns the writer that subsequent New/NewWithLevel calls will use.
 func Output() io.Writer {
 	return output
 }
