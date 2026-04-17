@@ -46,6 +46,17 @@ func init() {
 	}
 }
 
+// SetOutput overrides the writer used by all subsequent New/NewWithLevel calls.
+// Call before New() to add additional writers (e.g., io.MultiWriter for a ring buffer).
+func SetOutput(w io.Writer) {
+	output = w
+}
+
+// Output returns the current output writer.
+func Output() io.Writer {
+	return output
+}
+
 // New returns a new configured Logger instance.
 func New() Logger {
 	return newWithLevel(os.Getenv("LOG_LEVEL"))
