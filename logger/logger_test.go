@@ -56,3 +56,28 @@ func TestLogger(t *testing.T) {
 	assert.Contains(t, line, `"level":"info"`)
 	assert.Contains(t, line, `"message":"foo"`)
 }
+
+func TestSetOutput(t *testing.T) {
+	prev := output
+	defer func() { output = prev }()
+
+	var buf bytes.Buffer
+	SetOutput(&buf)
+	assert.Same(t, &buf, Output())
+
+	New().Info("hello")
+	assert.Contains(t, buf.String(), `"message":"hello"`)
+}
+
+func TestSetOutputMultiWriter(t *testing.T) {
+	prev := output
+	defer func() { output = prev }()
+
+	var a, b bytes.Buffer
+	SetOutput(io.MultiWriter(&a, &b))
+
+	New().Info("fanout")
+
+	assert.Contains(t, a.String(), `"message":"fanout"`)
+	assert.Contains(t, b.String(), `"message":"fanout"`)
+}
