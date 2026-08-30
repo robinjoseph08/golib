@@ -7,6 +7,8 @@ This is a Go module of some of the packages that I use in almost every one of my
 over from project to project, I decided to just put them up here so that I can reference them directly. That way, any
 changes I need to make, I can just make it in one place.
 
+This module requires Go 1.25 or newer.
+
 ## Packages
 
 The included packages are:
@@ -16,13 +18,13 @@ The included packages are:
   provides an interface that is a bit more ergonomic.
 - [`signals`](./signals) - A standard way to capture shutdown signals, so that you can gracefully shut your application
   down.
-- [Echo](https://echo.labstack.com/) v4 packages (v3 is also supported by removing `v4` from the path)
-  - [`echo/v4/health`](./echo/v4/health) - A basic health check endpoint for Echo servers.
-  - [`echo/v4/middleware/logger`](./echo/v4/middleware/logger) - A logging middleware that logs requests for Echo
+- [Echo](https://echo.labstack.com/) v5 packages. Use `echo/v4/...` for Echo v4 or `echo/...` for Echo v3.
+  - [`echo/v5/health`](./echo/v5/health) - A basic health check endpoint for Echo servers.
+  - [`echo/v5/middleware/logger`](./echo/v5/middleware/logger) - A logging middleware that logs requests for Echo
     servers.
-  - [`echo/v4/middleware/recovery`](./echo/v4/middleware/recovery) - A recovery middleware to save from panics for Echo
+  - [`echo/v5/middleware/recovery`](./echo/v5/middleware/recovery) - A recovery middleware to save from panics for Echo
     servers.
-  - [`echo/v4/test`](./echo/v4/test) - A package that could be useful for testing Echo servers.
+  - [`echo/v5/test`](./echo/v5/test) - A package that could be useful for testing Echo servers.
 
 ## Release
 
